@@ -1,9 +1,7 @@
 import useRazorpay from "react-razorpay";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Payment=()=>{
-  const navigate = useNavigate(); 
   const [amount, setAmount] = useState("");
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
@@ -30,13 +28,8 @@ const Payment=()=>{
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaH_zoFeYq-q9_uRGiW9rGl-MKmABx5_6uig&s",
     handler: function (response) {
       setAmount("")
-      navigate("/thank-you", {
-        state: {
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_order_id: response.razorpay_order_id,
-          amount: amount,  // Pass the amount as well
-        },
-      });
+        const thankYouUrl = `/thank-you?payment_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}&amount=${amount}`;
+     window.location.href = thankYouUrl;
      
     },
     prefill: {
