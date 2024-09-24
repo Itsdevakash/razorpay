@@ -78,8 +78,7 @@ const Payment=()=>{
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Enter amount"
         required
-        style={{ 
-          width:'20%',
+        style={{          
           fontSize: '26px',    
          }}
       />   
@@ -91,8 +90,7 @@ const Payment=()=>{
         placeholder="Enter Name"
         required
         style={{ 
-          width:'20%',
-          fontSize: '26px',    
+        fontSize: '26px',    
          }}
       />
     <br></br>    <br></br>
@@ -103,8 +101,7 @@ const Payment=()=>{
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter Email"
         required
-        style={{ 
-          width:'20%',
+        style={{          
           fontSize: '26px',    
          }}
       />
@@ -117,8 +114,7 @@ const Payment=()=>{
         placeholder="Enter Mobile No "
         maxlength="10"
         required
-        style={{ 
-          width:'20%',
+        style={{          
           fontSize: '26px',    
          }}
       />
